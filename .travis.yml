@@ -9,7 +9,7 @@ cache: bundler
 
 #sudo: required
 install:
-  - ./install.sh
+  - install.sh
 
 #before_script:
 #  - ./travis-scripts/before_script.sh
