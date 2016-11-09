@@ -1,5 +1,5 @@
 <?php
-class FooTest extends PHPUnit_Framework_TestCase{
+class FooTest2 extends PHPUnit_Framework_TestCase{
 
 	public function testFoo(){
 		$array_test = ['test', 'test2'];
