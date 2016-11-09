@@ -4,5 +4,5 @@ php:
 script: phpunit tests/
 sudo: required
 install:
-./install.sh
+  - ./install.sh
 
