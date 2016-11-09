@@ -2,11 +2,14 @@ language: php
 php:
   - 5.5
 script: phpunit tests/
+
+#bundle installを毎回走らせないようにキャッシュする
+bundler_args: --deployment
+cache: bundler
+
 #sudo: required
-#install:
-#  - ./install.sh
-#install:
-#  - ./travis-scripts/install.sh
+install:
+  - ./install.sh
 
 #before_script:
 #  - ./travis-scripts/before_script.sh
