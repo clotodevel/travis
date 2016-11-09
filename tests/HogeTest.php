@@ -10,7 +10,7 @@ class HogeTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(0, $hoge->count());
 		//$this->assertEquals(1, $hoge->count());
 		$this->stack = array('1111', '2222', '33333', '43');
-		$this->assertEquals(4, $hoge->count());
+		$this->assertEquals(3, $hoge->count());
 
 		/*
 		$hoge->push('hoge');
