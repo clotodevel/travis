@@ -8,11 +8,11 @@ bundler_args: --deployment
 cache: bundler
 
 #sudo: required
-install:
-  - ./travis-scripts/install.sh
+#install:
+#  - ./travis-scripts/install.sh
 
-#before_script:
-#  - ./travis-scripts/before_script.sh
+before_script:
+ - pip install redis
 
 #script:
 #  - ./travis-scripts/script.sh
