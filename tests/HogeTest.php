@@ -8,7 +8,9 @@ class HogeTest extends PHPUnit_Framework_TestCase
 	public function Hogeをテスト(){
 		$hoge = new Hoge();
 		$this->assertEquals(0, $hoge->count());
-		$this->assertEquals(1, $hoge->count());
+		//$this->assertEquals(1, $hoge->count());
+		$this->stack = 8;
+		$this->assertEquals(8, $hoge->count());
 
 		/*
 		$hoge->push('hoge');
