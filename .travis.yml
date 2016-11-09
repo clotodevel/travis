@@ -2,7 +2,15 @@ language: php
 php:
   - 5.5
 script: phpunit tests/
-sudo: required
-install:
-  - ./install.sh
+#sudo: required
+#install:
+#  - ./install.sh
+#install:
+#  - ./travis-scripts/install.sh
+
+#before_script:
+#  - ./travis-scripts/before_script.sh
+
+#script:
+#  - ./travis-scripts/script.sh
 
