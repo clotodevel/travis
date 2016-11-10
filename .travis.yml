@@ -8,12 +8,12 @@ script: phpunit tests/
 #cache: bundler
 
 sudo: false
-#install:
+install:
+  - php composer.phar install
 #  - ./travis-scripts/install.sh
 
 before_script:
  - pip install --user redis
- - pip install --user git
 
 #script:
 #  - ./travis-scripts/script.sh
