@@ -7,12 +7,12 @@ script: phpunit tests/
 bundler_args: --deployment
 cache: bundler
 
-sudo: required
+#sudo: required
 #install:
 #  - ./travis-scripts/install.sh
 
 before_script:
- - pip install redis
+ - pip install --user redis
 
 #script:
 #  - ./travis-scripts/script.sh
