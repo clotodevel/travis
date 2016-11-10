@@ -4,8 +4,8 @@ php:
 script: phpunit tests/
 
 #bundle installを毎回走らせないようにキャッシュする
-bundler_args: --deployment
-cache: bundler
+#bundler_args: --deployment
+#cache: bundler
 
 #sudo: required
 #install:
