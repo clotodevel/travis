@@ -3,18 +3,21 @@ php:
   - 5.5
 script: phpunit tests/
 
+services:
+    - redis-server
+    - memcached
+
 #bundle installを毎回走らせないようにキャッシュする
 #bundler_args: --deployment
 #cache: bundler
+ install phpredis extension.
 
 sudo: false
 #install:
-#  - ./travis-scripts/install.sh
 
 before_script:
-  - composer require ext-redis *
+  - composer require ukko/phpredis-phpdoc
   - pip install --user redis
 
 #script:
-#  - ./travis-scripts/script.sh
 
