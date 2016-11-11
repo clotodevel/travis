@@ -12,7 +12,6 @@ sudo: false
 #  - ./travis-scripts/install.sh
 
 before_script:
-  - composer require redisrpc
   - pip install --user redis
 
 #script:
