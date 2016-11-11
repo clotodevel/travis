@@ -12,6 +12,7 @@ sudo: false
 #  - ./travis-scripts/install.sh
 
 before_script:
+  - composer require ext-redis
   - pip install --user redis
 
 #script:
