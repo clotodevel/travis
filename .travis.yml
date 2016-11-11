@@ -10,7 +10,6 @@ services:
 #bundle installを毎回走らせないようにキャッシュする
 #bundler_args: --deployment
 #cache: bundler
- install phpredis extension.
 
 sudo: false
 #install:
