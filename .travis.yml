@@ -15,7 +15,7 @@ sudo: false
 #install:
 
 before_script:
-  - composer require ukko/phpredis-phpdoc
+  - composer require ukko/phpredis-phpdoc:*
   - pip install --user redis
 
 #script:
