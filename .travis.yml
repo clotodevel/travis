@@ -17,7 +17,7 @@ sudo: false
 before_script:
 #
 # - composer require ukko/phpredis-phpdoc:dev-master
-  - composer require cheprasov/php-redis-client:stable
+  - composer require predis/predis:*
 # - pip install --user redis
 
 #script:
