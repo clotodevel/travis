@@ -18,7 +18,7 @@ before_script:
 #
 # - composer require ukko/phpredis-phpdoc:dev-master
   - composer require phpredis/phpredis
-  - pip install --user redis
+# - pip install --user redis
 
 #script:
 
