@@ -52,7 +52,7 @@ class Hoge
 	public function レディス(){
 		require 'vendor/autoload.php';
 
-		$client = new Predis\Client();
+		$client = new Predis\Client('tcp://127.0.0.1:6379');
 		$client->set('foo', 'bar');
 		$value = $client->get('foo');
 		print $value;
