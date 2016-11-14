@@ -13,6 +13,8 @@ class HogeTest extends PHPUnit_Framework_TestCase
 		$this->assertEquals(3, 3);
 		$this->assertEquals(3, 3);
 
+
+
 		/*
 		$hoge->push('hoge');
 		$this->assertEquals(1, $hoge->count());
@@ -44,5 +46,10 @@ class Hoge
 	}
 	public function カウント(){
 		return $this->count();
+	}
+
+	public function レディス(){
+		$redis = new Redis();
+
 	}
 }
