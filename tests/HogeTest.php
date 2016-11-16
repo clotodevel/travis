@@ -48,7 +48,7 @@ function convertMetaKeywords($value) {
 	return $value;
 }
 function convertMetaDescription($value) {
-	if(strpos($value, '&meta_description') !== FALSE && preg_match('/'. META_DESCRIPTION_RE .'/', $value)){
+	if(strpos($value, '&meta_description') !== FALSE && preg_match('/'. META_DESCRIPTION_RE .'/', $value, $match)){
 		preg_match('/\(.+\)$/', $match[0], $m);
 		$description = '<meta name="description" content="'.trim($m[0], "()").'">';
 		return htmlspecialchars($description);
