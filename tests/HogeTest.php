@@ -18,7 +18,8 @@ class HogeTest extends PHPUnit_Framework_TestCase
 		$this->assertTrue(isExistMetaTag($value));
 
 		echo $convert_value = convertMetaKeywords($value);
-		$this->assertRegExp('/^&meta_keywords/', $convert_value);
+		$regptn = htmlspecialchars('&meta_keywords');
+		$this->assertRegExp('/^'.$regptn.'/', $convert_value);
 		//echo convertMetaDescription($value);
 	}
 }
