@@ -18,6 +18,8 @@ before_script:
 #
 # redis php cliant
   - composer require predis/predis:*
+  - composer require mockery/mockery:*
+  - composer require facebook/php-sdk:v3.2.3
 # - pip install --user redis
 
 #script:
