@@ -15,13 +15,20 @@ class HogeTest extends PHPUnit_Framework_TestCase
 		$value = '&meta_keywords(メタキーワード)';
 		$value2 = '&meta_description(ディスクリプション)';
 		//$this->assertEquals(1, $hoge->count());
+
+		//META存在チェック
 		$this->assertTrue(isExistMetaTag($value));
 
+		//META KEYWORDSを変換
 		echo $convert_value = convertMetaKeywords($value);
 		$regptn = htmlspecialchars('<meta name="keywords"');
-
 		$this->assertRegExp('/^'.$regptn.'/', $convert_value);
-		//echo convertMetaDescription($value);
+
+		//META DESCRIPTIONを変換
+		echo $convert_value = convertMetaDescription($value);
+		$regptn = htmlspecialchars('<meta name="description"');
+		$this->assertRegExp('/^'.$regptn.'/', $convert_value);
+
 	}
 }
 
