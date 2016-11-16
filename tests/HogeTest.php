@@ -6,14 +6,17 @@ class HogeTest extends PHPUnit_Framework_TestCase
 	 * @test
 	 */
 	public function Hogeをテスト(){
-		$hoge = new Hoge();
-		$this->assertEquals(0, $hoge->count());
+
+		$value = '&meta_keywords(メタキーワード) &meta_description(メタディスクリプション)';
 		//$this->assertEquals(1, $hoge->count());
+		echo $convert_value = isExistMetaTag($value);
+		echo "\n";
+		echo convertMetaKeywords($convert_value);
+
 
 		$this->stack = array('1111', '2222', '33333', '43');
 		$this->assertEquals(3, 3);
-		//echo $hoge->レディス();
-		//echo 'takano';
+
 		$this->assertEquals('bar', $hoge->レディス());
 
 
@@ -32,6 +35,52 @@ class HogeTest extends PHPUnit_Framework_TestCase
 	}
 }
 
+function isExistMetaTag($value) {
+	if(strpos($value, '&meta_') !== FALSE){
+		return TRUE;
+	}
+	return FALSE;
+}
+
+function convertMetaKeywords($value) {
+	if(strpos($value, '&meta_keywords') !== FALSE && preg_match('/'. META_KEYWORDS_RE .'/', $value)){
+		return preg_replace('/'. META_KEYWORDS_RE .'/', "", $value);
+
+	}
+}
+function convertMetaDescription() {
+	if(strpos($value, '&meta_description') !== FALSE && preg_match('/'. META_DESCRIPTION_RE .'/', $value)){
+		return preg_replace('/'. META_DESCRIPTION_RE .'/', "", $value);
+	}
+}
+
+function convertMetaCanonical() {
+	if(strpos($value, '&meta_canonical') !== FALSE && preg_match('/'. META_CANONICAL_RE .'/', $value)){
+		return preg_replace('/'. META_CANONICAL_RE .'/', "", $value);
+	}
+}
+
+/*
+	//titleタグ削除処理
+	if(strpos($value, '&title(') !== FALSE && preg_match('/'. TITLE_RE .'/', $value)){
+		$value = preg_replace('/'. TITLE_RE .'/', "", $value);
+		if(!$value){//preg_replaceで変換して空行になった場合には改行しない
+			$return_flg = FALSE;
+		}
+	}
+
+	// entry_title変更構文
+	// entry_titleタグ削除処理
+	if(strpos($value, '&entry_title(') !== FALSE && preg_match('/'. ENTRY_TITLE_RE .'/', $value)){
+		$value = preg_replace('/'. ENTRY_TITLE_RE .'/', "", $value);
+		if(!$value){//preg_replaceで変換して空行になった場合には改行しない
+			$return_flg = FALSE;
+		}
+	}
+
+}
+*/
+/*
 class Hoge
 {
 	public $stack = array();
@@ -60,3 +109,4 @@ class Hoge
 		return $value;
 	}
 }
+*/
