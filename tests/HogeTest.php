@@ -12,8 +12,8 @@ class HogeTest extends PHPUnit_Framework_TestCase
 
 		$this->stack = array('1111', '2222', '33333', '43');
 		$this->assertEquals(3, 3);
-		echo $hoge->レディス();
-		echo 'takano';
+		//echo $hoge->レディス();
+		//echo 'takano';
 		$this->assertEquals('bar', $hoge->レディス());
 
 
@@ -57,7 +57,6 @@ class Hoge
 		$client = new Predis\Client('tcp://127.0.0.1:6379');
 		$client->set('foo', 'bar');
 		$value = $client->get('foo');
-		print $value;
-
+		return $value;
 	}
 }
