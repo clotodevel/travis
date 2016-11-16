@@ -25,7 +25,7 @@ class HogeTest extends PHPUnit_Framework_TestCase
 		$this->assertRegExp('/^'.$regptn.'/', $convert_value);
 
 		//META DESCRIPTIONを変換
-		echo $convert_value = convertMetaDescription($value);
+		echo $convert_value = convertMetaDescription($value2);
 		$regptn = htmlspecialchars('<meta name="description"');
 		$this->assertRegExp('/^'.$regptn.'/', $convert_value);
 
@@ -49,7 +49,6 @@ function convertMetaKeywords($value) {
 }
 function convertMetaDescription($value) {
 	if(strpos($value, '&meta_description') !== FALSE && preg_match('/'. META_DESCRIPTION_RE .'/', $value)){
-		die('adf');
 		preg_match('/\(.+\)$/', $match[0], $m);
 		$description = '<meta name="description" content="'.trim($m[0], "()").'">';
 		return htmlspecialchars($description);
