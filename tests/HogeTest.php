@@ -7,6 +7,11 @@ class HogeTest extends PHPUnit_Framework_TestCase
 	 */
 	public function Hogeをテスト(){
 
+		define('META_KEYWORDS_RE',			 '&meta_keywords\([^\)<>\/\'\"&]*\)');
+		define('META_DESCRIPTION_RE',		 '&meta_description\([^\)<>\/\'\"&]*\)');
+		define('META_CANONICAL_RE',			 '&meta_canonical\([^\)<>\'\"]*\)');
+		define('TITLE_RE',					 '&title\(([^\t\n]*)\)');
+
 		$value = '&meta_keywords(メタキーワード) &meta_description(メタディスクリプション)';
 		//$this->assertEquals(1, $hoge->count());
 		echo $convert_value = isExistMetaTag($value);
@@ -17,7 +22,7 @@ class HogeTest extends PHPUnit_Framework_TestCase
 		$this->stack = array('1111', '2222', '33333', '43');
 		$this->assertEquals(3, 3);
 
-		$this->assertEquals('bar', $hoge->レディス());
+		//$this->assertEquals('bar', $hoge->レディス());
 
 
 
