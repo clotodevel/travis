@@ -18,7 +18,8 @@ class HogeTest extends PHPUnit_Framework_TestCase
 		$this->assertTrue(isExistMetaTag($value));
 
 		echo $convert_value = convertMetaKeywords($value);
-		$regptn = htmlspecialchars('&meta_keywords');
+		$regptn = '&meta_keywords';
+
 		$this->assertRegExp('/^'.$regptn.'/', $convert_value);
 		//echo convertMetaDescription($value);
 	}
@@ -35,7 +36,8 @@ function convertMetaKeywords($value) {
 	if (preg_match('/'. META_KEYWORDS_RE .'/', $value, $match)) {
 		preg_match('/\(.+\)$/', $match[0], $m);
 		$description = '<meta name="keywords" content="'.trim($m[0], "()").'">';
-		return htmlspecialchars($description);
+		//return htmlspecialchars($description);
+		return $description;
 	}
 	return $value;
 }
